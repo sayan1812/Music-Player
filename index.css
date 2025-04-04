@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-image: url('music_bg.jpg');
+    font-family: Arial, sans-serif;
+  }
+  
+  .music-player {
+    background: rgba(255, 255, 255, 0.014);
+    width: 300px;
+    padding: 20px;
+    border-radius: 60px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.402);
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+  }
+  
+  div {
+    padding: 5px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .cd-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  #progress-bar {
+    width: 60%;
+    cursor: pointer;
+  }
+  
+  .cd {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cd img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  .playing .cd img {
+    animation-play-state: running;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  button {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 40%;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  
+  #song-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+/*   
+  #song-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  #song-list li {
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #song-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  #song-list li.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+   */
+   /* ... (keep existing styles from before) ... */
+
+#song-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  #song-list li {
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  #song-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  #song-list li.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+  
+  /* 🎵 More Options Button */
+  .more-options {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* 🎯 Dropdown menu for options */
+  .options-menu {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+  }
+  
+  .options-menu button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 6px 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .options-menu button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+  }
+  
